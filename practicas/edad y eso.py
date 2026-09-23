@@ -20,5 +20,13 @@ CONTANTES ={
 valor=1000
 total= valor + (valor*CONTANTES["IVA"])
 
+ edad = 15
+ altura = 1.75 
+ nombre = "Ana"
+  
+ print(5)
+ print("hola")
+ print(5 > 3)
+
 
 
