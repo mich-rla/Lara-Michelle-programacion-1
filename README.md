@@ -2,7 +2,7 @@ Repositorio de Programación 1
 
 Nombre del alumno: Alexa Michelle Rodriguez Lara
 Curso: Programación 1
-Grupo: Por confirmar
+Grupo: V2213
 
 Propósito del repositorio
 
@@ -41,4 +41,4 @@ Para clonar el repositorio en otra computadora se deben seguir estos pasos:
 
 Primeros proyectos
 
-En esta sección se agregarán posteriormente los enlaces y archivos correspondientes a los proyectos realizados durante la materia, incluyendo el proyecto de Scratch y su porción traducida a Python
+En esta sección se agregarán posteriormente los enlaces y archivos correspondientes a los proyectos realizados durante la materia, incluyendo el proyecto de Scratch y su porción traducida a Python.
