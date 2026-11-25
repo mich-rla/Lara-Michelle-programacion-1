@@ -42,6 +42,22 @@ def mostrar_mapa(laberinto): # esta funcion muestra el laberinto
 
         print()
 
+def mover_jugador(fila, columna, movimiento): #solo para mover al jugador con las teclas wsad
+
+    if movimiento == "w":
+        fila = fila - 1 #arriba
+
+    elif movimiento == "s":
+        fila = fila + 1 #abajo
+
+    elif movimiento == "a":
+        columna = columna - 1 #izq
+
+    elif movimiento == "d":
+        columna = columna + 1 #der
+
+    return fila, columna
+
 def main():
     #Mich del futuro: aquí incia el juego 
 
@@ -65,6 +81,32 @@ def main():
 
         print("\nNIVEL 1")
         mostrar_mapa(laberinto)
+
+        while True: #repetimos el movimiento varias veces (mientras esto pase)
+
+            movimiento = input("\n¿Para donde le damos?: ") #pedimos una instruccion
+            movimiento = movimiento.lower().strip() # convierte a minusculas
+
+            if movimiento not in ["w", "a", "s", "d"]:
+                print("Usa las teclas correctas -_-")
+                continue #por si presionan otra tecla
+
+            nueva_fila, nueva_columna = mover_jugador(
+                fila_jugador, columna_jugador, movimiento
+            )
+
+            if laberinto[nueva_fila][nueva_columna] == "#": #es un tope, para que no
+                print("Ups, chocaste con la pared!")        #atraviese la pared
+
+            else:
+                laberinto[fila_jugador][columna_jugador] = "." #borra la posicion
+
+                fila_jugador = nueva_fila
+                columna_jugador = nueva_columna
+
+                laberinto[fila_jugador][columna_jugador] = "P" #la nueva posición
+
+            mostrar_mapa(laberinto)
 
     else:
         print("\nHasta pronto :) ")
