@@ -78,6 +78,7 @@ def main():
 
         fila_jugador = 1
         columna_jugador = 1
+        puntos = 0 # inicia el juego sin puntos
 
         print("\nNIVEL 1")
         mostrar_mapa(laberinto)
@@ -99,14 +100,37 @@ def main():
                 print("Ups, chocaste con la pared!")        #atraviese la pared
 
             else:
-                laberinto[fila_jugador][columna_jugador] = "." #borra la posicion
+                objeto = laberinto[nueva_fila][nueva_columna]
+
+                if objeto == "E":
+                    puntos = puntos + 20
+                    print("Encontraste una estrella!")
+
+                elif objeto == "M":
+                    puntos = puntos + 10
+                    print("Encontraste una moneda!")
+
+                elif objeto == "D":
+                    puntos = puntos - 15
+                    print("Caíste en una trampa :(")
+
+                laberinto[fila_jugador][columna_jugador] = "."
 
                 fila_jugador = nueva_fila
                 columna_jugador = nueva_columna
 
-                laberinto[fila_jugador][columna_jugador] = "P" #la nueva posición
+                laberinto[fila_jugador][columna_jugador] = "P"
 
             mostrar_mapa(laberinto)
+            print("Puntos:", puntos)
+                
+
+                
+                
+
+                
+
+            
 
     else:
         print("\nHasta pronto :) ")
